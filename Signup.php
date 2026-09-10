@@ -33,11 +33,11 @@ class Signup extends Dbh {
 
     public function signupUser(): bool {
         if (empty($this->username) || empty($this->pwd)) {
-            header("Location: ../index.php?error=emptyinput");
+            header("Location: ../signup-page.php?error=emptyinput");
             exit();
         }  
         if ($this->isUsernameTaken()) {
-            header("Location: ../index.php?error=usernametaken");
+            header("Location: ../signup-page.php?error=usernametaken");
             exit();
         }
         return $this->insertUser();

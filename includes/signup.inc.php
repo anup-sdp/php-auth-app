@@ -9,13 +9,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $signup = new Signup($username, $pwd);
     if ($signup->signupUser()) {
-        header("Location: ../index.php?signup=success");
+        header("Location: ../login-page.php?signup=success");
         exit();
     }
-    header("Location: ../index.php?error=signuperror");
+    header("Location: ../signup-page.php?error=signuperror");
     exit(); // die();
 } else {
-    header("Location: ../index.php?error=invalidrequest");
+    header("Location: ../signup-page.php?error=invalidrequest");
     exit();
 }
 
