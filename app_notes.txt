@@ -1,0 +1,27 @@
+php class demonstration
+following Dani Krossing at https://www.youtube.com/watch?v=yrFr5PMdk2A
+made this auth_system with gemini 3.6 flash extended,
+saves raw username and password (insecure) in users.json file.
+
+run:
+php -S localhost:8000
+
+http://localhost:8000/   --(index.php shows signup form)
+
+http://localhost:8000/login-page.php  --(shows signin page)
+
+http://localhost:8000/dashboard-page.php  --(shows after login)
+
+
+
+
+git init
+git status
+git add .
+git commit -m "initial commit"
+
+
+# later
+git remote add origin https://github.com/username/repo-name.git
+git branch -M main
+git push -u origin main
