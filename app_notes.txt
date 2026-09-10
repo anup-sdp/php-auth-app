@@ -18,7 +18,7 @@ http://localhost:8000/dashboard-page.php  --(shows after login)
 git init
 git status
 git add .
-git commit -m "ui update"
+git commit -m "update 0.2"
 
 
 # later

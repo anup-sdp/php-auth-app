@@ -1,3 +1,4 @@
+<!-- file: signup-page.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,32 +14,36 @@
         <div class="bg-white p-6 rounded shadow w-full max-w-md  mx-auto">
             <h1 class="text-2xl font-bold mb-4 text-center">Sign Up</h1>
             <!-- php messages -->
+            <?php  
+                $errorMessageStyle = "bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-4 text-sm";
+                $successMessageStyle = "bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg mb-4 text-sm";
+            ?>
             <?php if (isset($_GET['error'])): ?>
                 <?php if ($_GET['error'] === 'signuperror'): ?>
-                    <div class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-4 text-sm" role="alert">
+                    <div class="<?= $errorMessageStyle ?>">
                         Could not signup, please try again!
                     </div>
                 <?php elseif ($_GET['error'] === 'emptyinput'): ?>
-                    <div class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-4 text-sm" role="alert">
+                    <div class="<?= $errorMessageStyle ?>">
                         Please fill in all fields!
                     </div>
                 <?php elseif ($_GET['error'] === 'usernametaken'): ?>
-                    <div class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-4 text-sm" role="alert">
+                    <div class="<?= $errorMessageStyle ?>">
                         Username is already taken!
                     </div>
                 <?php elseif ($_GET['error'] === 'invalidrequest'): ?>
-                    <div class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-4 text-sm" role="alert">
+                    <div class="<?= $errorMessageStyle ?>">
                         Invalid request, please try again!
                     </div>
                 <?php endif; ?>
             <?php endif; ?>
-                
+
             <?php if (isset($_GET['signup']) && $_GET['signup'] === 'success'): ?>
-                <div class="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg mb-4 text-sm" role="alert">
+                <div class="<?= $successMessageStyle ?>">
                     User registered! You can now log in.
                 </div>
             <?php endif; ?>
-            
+
             <!-- signup form -->
             <form action="includes/signup.inc.php" method="POST">
                 <label for="username" class="block mb-1">Username</label>
@@ -49,7 +54,7 @@
                     Sign Up
                 </button>
             </form>
-            
+
             <p class="text-center mt-4">
                 Already have an account?
                 <a href="login-page.php" class="text-blue-600 hover:underline font-medium">Log in</a>
