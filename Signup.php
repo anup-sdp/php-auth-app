@@ -24,10 +24,11 @@ class Signup extends Dbh {
     // Appends new user credentials and saves
     private function insertUser(): bool {
         $users = parent::getUsers();
-        $users[] = [
-            'username' => $this->username,
-            'pwd' => $this->pwd
-        ];
+        $users[] = ['username' => $this->username, 'pwd' => $this->pwd];
+        /*
+          ^ each appended element is an associative array, 
+          in parent json_encode() converts it to a JSON object. {"username": "newuser", "pwd": "newpassword"}
+        */        
         return parent::saveUsers($users);
     }
 

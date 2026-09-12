@@ -13,7 +13,7 @@
         <a href="index.php" class="block w-fit m-3 mx-auto bg-blue-600 text-white px-4 py-2 rounded-md">Home</a>
         <div class="max-w-md w-full bg-white rounded-xl shadow-md border border-gray-200 mx-auto p-6">
             <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Log In</h2>
-
+            <!-- php messages -->
             <?php if (isset($_GET['error'])): ?>
                 <?php if ($_GET['error'] === 'emptyinput'): ?>
                     <div class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-4 text-sm">
@@ -35,7 +35,7 @@
                     User registered! You can now log in.
                 </div>
             <?php endif; ?>
-
+            <!-- login form -->
             <form action="includes/login.inc.php" method="POST" class="space-y-3">
                 <div>
                     <label for="username" class="block mb-1 text-sm">Username</label>

@@ -1,5 +1,6 @@
 <?php
-// file: auth_system/includes/login.inc.php
+// file: includes/login.inc.php
+// login form submission handler
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username = trim($_POST["username"] ?? "");

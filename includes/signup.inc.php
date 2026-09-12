@@ -1,5 +1,7 @@
 <?php
-// file: auth_system/includes/signup.inc.php
+// file: includes/signup.inc.php
+// signup form submission handler
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username = trim($_POST["username"] ?? "");
     $pwd = $_POST["pwd"] ?? "";

@@ -33,7 +33,7 @@
                     </div>
                 <?php elseif ($_GET['error'] === 'invalidrequest'): ?>
                     <div class="<?= $errorMessageStyle ?>">
-                        Invalid request, please try again!
+                        Invalid request!
                     </div>
                 <?php endif; ?>
             <?php endif; ?>
@@ -46,10 +46,14 @@
 
             <!-- signup form -->
             <form action="includes/signup.inc.php" method="POST">
-                <label for="username" class="block mb-1">Username</label>
-                <input type="text" id="username" name="username" required class="w-full border p-2 rounded mb-4">
-                <label for="pwd" class="block mb-1">Password</label>
-                <input type="password" id="pwd" name="pwd" required class="w-full border p-2 rounded mb-4">
+                <div>
+                    <label for="username" class="block mb-1">Username</label>
+                    <input type="text" id="username" name="username" required class="w-full border p-2 rounded mb-4">
+                </div>
+                <div>
+                    <label for="pwd" class="block mb-1">Password</label>
+                    <input type="password" id="pwd" name="pwd" required class="w-full border p-2 rounded mb-4">
+                </div>                
                 <button type="submit" name="submit" class="w-full bg-blue-600 text-white py-2 rounded">            
                     Sign Up
                 </button>

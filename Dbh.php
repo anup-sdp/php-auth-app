@@ -8,17 +8,17 @@ class Dbh {
         $this->filePath = __DIR__ . "/users.json"; // see notes below
     }
 
-    // Reads and decodes JSON file into a PHP array
+    // reads and decodes JSON file into a PHP array
     protected function getUsers(): array {
         if (!file_exists($this->filePath)) {
             return [];
         }
         $jsonContent = file_get_contents($this->filePath);
-        $data = json_decode($jsonContent, true);
+        $data = json_decode($jsonContent, true); // true: decode the JSON into an associative array instead of an object.
         return is_array($data) ? $data : [];
     }
 
-    // Encodes array into JSON format and writes to file
+    // encodes array into JSON format and writes to file
     protected function saveUsers(array $users): bool {
         $jsonContent = json_encode($users, JSON_PRETTY_PRINT);
         return file_put_contents($this->filePath, $jsonContent, LOCK_EX) !== false;

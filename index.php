@@ -1,4 +1,4 @@
-<!-- file: auth_system/index.php -->
+<!-- file: index.php , homepage of the app -->
 
 <!DOCTYPE html>
 <html lang="en">
