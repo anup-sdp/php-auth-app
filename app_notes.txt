@@ -27,5 +27,5 @@ git commit -m "initial commit"
 git branch -M main
 git remote add origin https://github.com/anup-sdp/php-auth-app.git
 git add .
-git commit -m "update 0.4"
+git commit -m "update 0.5"
 git push -u origin main
